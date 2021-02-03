@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import './App.css';
 
 function App() {
+  const linkLat='';
+  const linkLng='';
   const [post, setPost]=useState({
     title: '',
     description: '',
@@ -73,10 +75,10 @@ function App() {
   <h2>Image Drag &amp; Drop &amp; Preview</h2>
   <form className encType="multipart/form-data">
     <div className="custom-form-group">
-      <input type="text" name="title" placeholder="Title" value={title} onChange={handleChange}/>
+      <input type="text" name="title" placeholder="סתם שדה לדוגמא אובי:)" value={title} onChange={handleChange}/>
     </div>
     <div className="custom-form-group">
-      <input type="text" name="desc" placeholder="Description" value={description} onChange={handleChange}/>
+      <input type="text" name="desc" placeholder="עוד אחד:)" value={description} onChange={handleChange}/>
     </div>
     <div className="custom-form-group">
       <div className={highlight? "custom-file-drop-area highlight": "custom-file-drop-area"}
@@ -96,7 +98,12 @@ function App() {
         ))}
       </div>
     </div>
-    <button type="submit" className="btn-submit">Submit</button>
+    <button type="submit" className="btn-submit">שליחה לא אמיתית:</button>
+    <a href={`https://waze.com/ul?ll=${linkLat},${linkLng}&navigate=yes`}
+       rel="noreferrer"
+       target="_blank">
+      Open in Waz
+    </a>
   </form>
 </div>
 
